@@ -38,10 +38,17 @@
   font-size: 1rem;
   border: 1px solid $color-offwhite;
   box-shadow: none;
+  padding: .75rem;
 
   &.focus {
     box-shadow: none;
   }
+}
+
+.selectize-control.multi .selectize-input .item {
+  padding: .5rem;
+  border-radius: 4px;
+  background: $color-offwhite;
 }
 
 .selectize-dropdown {
