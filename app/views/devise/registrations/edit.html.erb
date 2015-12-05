@@ -24,9 +24,11 @@
       <%= f.password_field :current_password, autocomplete: "off", class: "form__input" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Update", class: "button" %>
-    </div>
+    <%= f.submit "Update", class: "button" %>
+
+    <p>
+      <%= link_to "Sign out from your account", destroy_profile_session_path, method: :delete %>
+    </p>
 
     <!--
     <div class="form__field">
