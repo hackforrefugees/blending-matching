@@ -8,13 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
   <% if signed_in? %>
     <nav class="navbar">
       <%= link_to "P", profiles_path, class: "navbar__item" %>
       <%= link_to "M", profile_path(current_profile), class: "navbar__item" %>
       <%= link_to "C", "#", class: "navbar__item" %>
-      <%= link_to "S", edit_profile_registration_path(current_profile), class: "navbar__item" %>
+      <%= link_to "S", edit_profile_registration_path, class: "navbar__item" %>
     </nav>
   <% end %>
 
@@ -29,9 +28,7 @@
     </p>
   <% end %>
 
-  <div class="container">
-    <%= yield %>
-  </div>
+  <%= yield %>
 
   <%= link_to "Sign in", new_profile_session_path %>
   <%= link_to "Sign out", destroy_profile_session_path, method: :delete %>
