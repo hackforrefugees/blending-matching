@@ -11,7 +11,7 @@
 
     <div class="form__field">
       <%= f.label :picture %>
-      <%= image_tag @profile.picture %>
+      <%= image_tag @profile.picture, class: "form__field__image" %>
       <%= f.file_field :picture %>
     </div>
 
