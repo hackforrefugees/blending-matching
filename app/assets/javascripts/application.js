@@ -13,4 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require selectize
 //= require_tree .
+
+$(function() {
+  $('.select-box').selectize({});
+
+  $('.tag-box').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+      return {
+        value: input,
+        text: input
+      };
+    }
+});
+});
