@@ -1,17 +1,23 @@
 <div class="profile">
-  <div class= "profile__name">
-    <h2><%= @profile.name %></h2>
+  <div class="profile__name container">
+    <%= @profile.name %>
   </div>
-  <%= image_tag @profile.picture, class: "profile__picture" %>
-  <div class="profile__tags tags">
-    <% @profile.tags.each do |tag| %>
-      <span class="tags__tag"><%= tag %></span>
-    <% end %>
-  </div>
-  <div class="profile__description">
-    <%= @profile.description %>
-  </div>
-  <div class="profile__children">
 
+  <%= image_tag @profile.picture, class: "profile__picture" %>
+
+  <div class="container">
+    <div class="profile__tags tags">
+      <% @profile.tags.each do |tag| %>
+        <span class="tags__tag"><%= tag %></span>
+      <% end %>
+    </div>
+
+    <div class="profile__description">
+      <p><%= @profile.description %></p>
+    </div>
+
+    <p>
+      <%= link_to "Edit your profile", edit_profile_path %>
+    </p>
   </div>
 </div>
