@@ -1,0 +1,15 @@
+.navbar {
+  @include clearfix;
+  background: $color-primary;
+  width: 100%;
+}
+
+.navbar__item {
+  color: $color-offwhite;
+  display: block;
+  float: left;
+  line-height: 4;
+  text-align: center;
+  text-decoration: none;
+  width: 25%;
+}

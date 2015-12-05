@@ -10,6 +10,34 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+@import "normalize-rails";
+@import "bourbon";
+@import "color";
+@import "navbar";
+@import "profiles";
+@import "tags";
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $color-offblack;
+  line-height: 1.4;
+}
+
+a {
+  color: $color-offblack;
+}
+
+.container {
+  padding: 1rem;
+}
