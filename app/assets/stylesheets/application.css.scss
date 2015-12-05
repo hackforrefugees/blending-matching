@@ -17,6 +17,7 @@
 @import "bourbon";
 @import "color";
 @import "navbar";
+@import "profile";
 @import "profiles";
 @import "tags";
 
@@ -36,8 +37,4 @@ body {
 
 a {
   color: $color-offblack;
-}
-
-.container {
-  padding: 1rem;
 }

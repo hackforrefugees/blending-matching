@@ -1,3 +1,17 @@
-<h2><%= @profile.name %></h2>
-<img src = <%= @profile.picture %> >
-<%= debug @profile.attributes %>
+<div class="profile">
+  <div class= "profile__name">
+    <h2><%= @profile.name %></h2>
+  </div>
+  <%= image_tag @profile.picture, class: "profile__picture" %>
+  <div class="profile__tags tags">
+    <% @profile.tags.each do |tag| %>
+      <span class="tags__tag"><%= tag %></span>
+    <% end %>
+  </div>
+  <div class="profile__description">
+    <%= @profile.description %>
+  </div>
+  <div class="profile__children">
+
+  </div>
+</div>
