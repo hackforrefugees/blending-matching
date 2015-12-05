@@ -23,3 +23,4 @@ end
 
 gem "devise"
 gem "seedbank"
+gem "carrierwave"
