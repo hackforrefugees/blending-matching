@@ -8,8 +8,12 @@
     <%= f.text_field :name %>
   </div>
 
+
+
   <div class="field">
     <%= f.label :picture %><br />
+    <img src = <%= @profile.picture %> ><br />
+
     <%= f.file_field :picture %>
   </div>
 
