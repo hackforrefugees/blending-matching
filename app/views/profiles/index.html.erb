@@ -1,0 +1,9 @@
+<h2>Profiles</h2>
+
+<ul>
+  <% @profiles.each do |profile| %>
+    <li>
+      <%= link_to profile.name, profile %>
+    </li>
+  <% end %>
+</ul>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :profiles
-
   root to: "application#welcome"
+  devise_for :profiles
+  resources :profiles, only: [:index, :show]
 end
