@@ -15,10 +15,14 @@
 
 @import "normalize-rails";
 @import "bourbon";
+@import "selectize";
 @import "color";
 @import "navbar";
+@import "profile";
 @import "profiles";
 @import "tags";
+@import "forms";
+@import "buttons";
 
 html {
   box-sizing: border-box;
@@ -35,7 +39,11 @@ body {
 }
 
 a {
-  color: $color-offblack;
+  color: $color-primary;
+}
+
+img {
+  max-width: 100%;
 }
 
 .container {

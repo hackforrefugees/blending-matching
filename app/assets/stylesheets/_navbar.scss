@@ -8,8 +8,14 @@
   color: $color-offwhite;
   display: block;
   float: left;
-  line-height: 4;
   text-align: center;
   text-decoration: none;
   width: 25%;
+  img {
+    height: 30px;
+    margin: 15px 0;
+  }
+}
+.current-page {
+  background: darken($color-primary, 10%)
 }

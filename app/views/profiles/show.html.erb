@@ -1,15 +1,36 @@
-<h2><%= @profile.name %></h2>
-<img src = <%= @profile.picture %> >
-<div class="friendship">
-  <% friend_status = current_profile.friend_status(@profile) %>
-  <% if (friend_status == :accepted) %>
-    You are friends
-  <% elsif (friend_status == :awaiting_your_reply) %>
-    Accept friend request
-  <% elsif friend_status == :pending %>
-    Your friend request is pending
-  <% else %>
-    <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
-  <% end %>
+<div class="profile">
+  <div class="profile__name container">
+    <%= @profile.name %>
+  </div>
+
+  <%= image_tag @profile.picture, class: "profile__picture" %>
+
+  <div class="friendship">
+    <% friend_status = current_profile.friend_status(@profile) %>
+    <% if (friend_status == :accepted) %>
+      You are friends
+    <% elsif (friend_status == :awaiting_your_reply) %>
+      Accept friend request
+    <% elsif friend_status == :pending %>
+      Your friend request is pending
+    <% else %>
+      <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class="profile__tags tags">
+      <% @profile.tags.each do |tag| %>
+        <span class="tags__tag"><%= tag %></span>
+      <% end %>
+    </div>
+
+    <div class="profile__description">
+      <p><%= @profile.description %></p>
+    </div>
+
+    <p>
+      <%= link_to "Edit your profile", edit_profile_path %>
+    </p>
+  </div>
 </div>
-<%= debug @profile.attributes %>

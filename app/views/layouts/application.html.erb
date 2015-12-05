@@ -8,13 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
   <% if signed_in? %>
     <nav class="navbar">
-      <%= link_to "P", profiles_path, class: "navbar__item" %>
-      <%= link_to "M", profile_path(current_profile), class: "navbar__item" %>
-      <%= link_to "C", "#", class: "navbar__item" %>
-      <%= link_to "S", edit_profile_registration_path(current_profile), class: "navbar__item" %>
+      <%= link_to image_tag("blender.svg"), profiles_path, class: "#{current_page(profiles_path)} navbar__item" %>
+      <%= link_to image_tag("family.svg"), profile_path(current_profile), class: "#{current_page(profile_path(current_profile))} #{current_page(edit_profile_path)} navbar__item" %>
+      <%= link_to image_tag("chat.svg"), "#", class: "navbar__item" %>
+      <%= link_to image_tag("settings.svg"), edit_profile_registration_path(current_profile), class: "#{current_page(edit_profile_registration_path(current_profile))} navbar__item" %>
     </nav>
   <% end %>
 
@@ -29,11 +28,6 @@
     </p>
   <% end %>
 
-  <div class="container">
-    <%= yield %>
-  </div>
-
-  <%= link_to "Sign in", new_profile_session_path %>
-  <%= link_to "Sign out", destroy_profile_session_path, method: :delete %>
+  <%= yield %>
 </body>
 </html>

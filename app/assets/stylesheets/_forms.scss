@@ -1,0 +1,68 @@
+.form {
+
+}
+
+.form__field {
+  margin-bottom: 1rem;
+}
+
+.form__field__image {
+  width: 100%;
+  max-width: 700px;
+}
+
+.form__label {
+  display: block;
+}
+
+.form__hint {
+  margin-bottom: .25rem;
+  font-size: .9rem;
+  color: #999;
+}
+
+.form__input {
+  border-radius: 4px;
+  border: 1px solid $color-offwhite;
+  box-shadow: none;
+  display: block;
+  font-size: 1rem;
+  padding: .75rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.form__input--textarea {
+  height: 8rem;
+}
+
+.selectize-input {
+  font-size: 1rem;
+  border: 1px solid $color-offwhite;
+  box-shadow: none;
+  padding: .75rem;
+
+  &.focus {
+    box-shadow: none;
+  }
+}
+
+.selectize-control.multi .selectize-input .item {
+  padding: .5rem;
+  border-radius: 4px;
+  background: $color-offwhite;
+}
+
+.selectize-dropdown {
+  border: 1px solid $color-offwhite;
+  border-top: none;
+  box-shadow: none;
+
+  .active, .create {
+    color: $color-offblack;
+    background: $color-offwhite;
+  }
+}
