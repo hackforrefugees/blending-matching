@@ -16,7 +16,7 @@
 //= require selectize
 //= require_tree .
 
-$(function() {
+$(document).on('page:change', function() {
   $('.select-box').selectize({});
 
   $('.tag-box').selectize({
