@@ -13,6 +13,24 @@
     <%= f.file_field :picture %>
   </div>
 
+    <%= f.label :location_id %><br />
+    <%= f.collection_select :location_id, Location.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :native %><br />
+    <%= f.check_box :native %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />

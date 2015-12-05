@@ -1,0 +1,12 @@
+<h2>Profiles</h2>
+
+Your tags: <%= current_profile.tag_list %>
+
+<ul>
+  <% @profiles.each do |profile| %>
+    <li>
+      <%= link_to profile.name, profile %><br>
+      <%= profile.tag_list %>
+    </li>
+  <% end %>
+</ul>
