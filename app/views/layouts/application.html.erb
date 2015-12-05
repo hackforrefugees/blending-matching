@@ -14,14 +14,13 @@
   <nav>
     <ul>
       <li><%= link_to "Profile Index", profiles_path %></li>
-      <li><%= link_to "My Profile", profile_path(current_profile) %></li>
-      <li><%= link_to "Settings", edit_profile_registration_path(current_profile) %></li>
-      <li>
-        <% if signed_in? %>
-          <%= link_to "Sign out", destroy_profile_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign in", new_profile_session_path %>
-        <% end %>
+      <% if signed_in? %>
+        <li><%= link_to "My Profile", profile_path(current_profile) %></li>
+        <li><%= link_to "Settings", edit_profile_registration_path(current_profile) %></li>
+        <li><%= link_to "Sign out", destroy_profile_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign in", new_profile_session_path %></li>
+      <% end %>
       </li>
     </ul>
   </nav>
