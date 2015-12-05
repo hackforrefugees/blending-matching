@@ -5,18 +5,20 @@
 
   <%= image_tag @profile.picture, class: "profile__picture" %>
 
-  <div class="friendship">
-    <% friend_status = current_profile.friend_status(@profile) %>
-    <% if (friend_status == :accepted) %>
-      You are friends
-    <% elsif (friend_status == :awaiting_your_reply) %>
-      Accept friend request
-    <% elsif friend_status == :pending %>
-      Your friend request is pending
-    <% else %>
-      <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
-    <% end %>
-  </div>
+  <% if @profile != current_profile %>
+    <div class="friendship">
+      <% friend_status = current_profile.friend_status(@profile) %>
+      <% if (friend_status == :accepted) %>
+        You are friends
+      <% elsif (friend_status == :awaiting_your_reply) %>
+        Accept friend request
+      <% elsif friend_status == :pending %>
+        Your friend request is pending
+      <% else %>
+        <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="container">
     <div class="profile__tags tags">
