@@ -13,6 +13,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 
 group :development, :test do
   gem "pry"
+  gem "pry-rails"
   gem "pry-byebug"
 end
 
@@ -23,3 +24,4 @@ end
 
 gem "devise"
 gem "seedbank"
+gem "tagliatelle"

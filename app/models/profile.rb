@@ -1,4 +1,6 @@
 class Profile < ActiveRecord::Base
+  include Tagliatelle::Taggable
+
   belongs_to :location, required: true
 
   validates :name, presence: true
