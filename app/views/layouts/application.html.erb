@@ -11,11 +11,22 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <% if signed_in? %>
-    <%= link_to "Sign out", destroy_profile_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign in", new_profile_session_path %>
-  <% end %>
+  <nav>
+    <ul>
+      <li><%= link_to "Profile Index", profiles_path %></li>
+      <li><%= link_to "My Profile", profile_path(current_profile) %></li>
+      <li><%= link_to "Settings", edit_profile_registration_path(current_profile) %></li>
+      <li>
+        <% if signed_in? %>
+          <%= link_to "Sign out", destroy_profile_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_profile_session_path %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+
+
 
   <%= yield %>
 
