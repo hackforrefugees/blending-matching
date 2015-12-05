@@ -2,32 +2,38 @@
 <html>
 <head>
   <title>Blending</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if signed_in? %>
+    <nav class="navbar">
+      <%= link_to "P", profiles_path, class: "navbar__item" %>
+      <%= link_to "M", profile_path(current_profile), class: "navbar__item" %>
+      <%= link_to "C", "#", class: "navbar__item" %>
+      <%= link_to "S", edit_profile_registration_path(current_profile), class: "navbar__item" %>
+    </nav>
+  <% end %>
 
-  <nav>
-    <ul>
-      <li><%= link_to "Profile Index", profiles_path %></li>
-      <% if signed_in? %>
-        <li><%= link_to "My Profile", profile_path(current_profile) %></li>
-        <li><%= link_to "Settings", edit_profile_registration_path(current_profile) %></li>
-        <li><%= link_to "Sign out", destroy_profile_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Sign in", new_profile_session_path %></li>
-      <% end %>
-      </li>
-    </ul>
-  </nav>
+  <% if notice.present? %>
+    <p class="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+  <% if alert.present? %>
+    <p class="alert">
+      <%= alert %>
+    </p>
+  <% end %>
 
+  <div class="container">
+    <%= yield %>
+  </div>
 
-
-  <%= yield %>
-
+  <%= link_to "Sign in", new_profile_session_path %>
+  <%= link_to "Sign out", destroy_profile_session_path, method: :delete %>
 </body>
 </html>

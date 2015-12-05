@@ -1,12 +1,19 @@
-<h2>Profiles</h2>
-
-Your tags: <%= current_profile.tag_list %>
-
-<ul>
+<div class="profiles">
   <% @profiles.each do |profile| %>
-    <li>
-      <%= link_to profile.name, profile %><br>
-      <%= profile.tag_list %>
-    </li>
+    <%= link_to profile do %>
+      <div class="profiles__profile">
+        <%= image_tag profile.picture, class: "profiles__profile__picture" %>
+        <div class="profiles__profile__content">
+          <div class="profiles__profile__content__name">
+            <%= profile.name %>
+          </div>
+          <div class="tags">
+            <% profile.tags.each do |tag| %>
+              <span class="tags__tag"><%= tag %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>

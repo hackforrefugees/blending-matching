@@ -1,0 +1,26 @@
+.profiles {
+
+}
+
+.profiles__profile {
+  @include clearfix;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $color-offwhite;
+}
+
+.profiles__profile__picture {
+  float: left;
+  width: 25%;
+  border-radius: 4px;
+}
+
+.profiles__profile__content {
+  width: 75%;
+  padding-left: 1rem;
+  float: left;
+}
+
+.profiles__profile__content__name {
+  font-size: 1.25rem;
+}
