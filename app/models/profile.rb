@@ -2,6 +2,8 @@ class Profile < ActiveRecord::Base
   include Tagliatelle::Taggable
 
   belongs_to :location, required: true
+  has_many :friendships
+  has_many :friends, :through => :friendships
 
   validates :name, presence: true
   validates :description, presence: true
