@@ -9,7 +9,8 @@ Profile.create!(
   password: "password",
   location: stockholm,
   tag_list: "",
-  native: true
+  native: true,
+  picture: File.open(File.join(Rails.root, '/public/images/seeds/royal-sweden.jpg'))
 )
 
 Profile.create!(
@@ -19,7 +20,8 @@ Profile.create!(
   password: "password",
   location: goteborg,
   tag_list: "food, restaurants, fika",
-  native: true
+  native: true,
+  picture: File.open(File.join(Rails.root, '/public/images/seeds/the-jackson-family.jpg'))
 )
 
 Profile.create!(
@@ -29,7 +31,8 @@ Profile.create!(
   password: "password",
   location: goteborg,
   tag_list: "food",
-  native: true
+  native: true,
+  picture: File.open(File.join(Rails.root, '/public/images/seeds/minions.jpg'))
 )
 
 Profile.create!(
@@ -39,7 +42,8 @@ Profile.create!(
   password: "password",
   location: goteborg,
   tag_list: "football, disco, fika",
-  native: false
+  native: false,
+  picture: File.open(File.join(Rails.root, '/public/images/seeds/the-simpsons.jpg'))
 )
 
 Profile.create!(
@@ -49,7 +53,8 @@ Profile.create!(
   password: "password",
   location: goteborg,
   tag_list: "football",
-  native: false
+  native: false,
+  picture: File.open(File.join(Rails.root, '/public/images/seeds/addams-family.jpg'))
 )
 
 Profile.create!(
@@ -59,5 +64,6 @@ Profile.create!(
   password: "password",
   location: goteborg,
   tag_list: "fika, food",
-  native: false
+  native: false,
+  picture: File.open(File.join(Rails.root, '/public/images/seeds/sune.jpg'))
 )
