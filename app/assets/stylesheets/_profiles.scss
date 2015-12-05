@@ -1,11 +1,9 @@
 .profiles {
-  padding: 1rem;
 }
 
 .profiles__profile {
   @include clearfix;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding: 1rem;
   border-bottom: 1px solid $color-offwhite;
 }
 
