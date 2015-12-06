@@ -28,5 +28,9 @@ $(document).on('page:change', function() {
         text: input
       };
     }
-});
+  });
+
+  setTimeout(function(){
+    $('.flash').fadeOut();
+  }, 2000);
 });

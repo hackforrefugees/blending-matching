@@ -8,11 +8,12 @@
   color: $color-offwhite;
   display: block;
   float: left;
-  text-align: center;
   width: 25%;
+
   img {
+    display: block;
     height: 30px;
-    margin: 15px 0;
+    margin: 1.25rem auto;
   }
 }
 

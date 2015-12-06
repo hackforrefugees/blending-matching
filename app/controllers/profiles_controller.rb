@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
     @profiles = Profile.where(location: current_profile.location)
                        .where.not(id: current_profile.id)
                        .where.not(native: current_profile.native)
+                       .where.not(id: current_profile.friends.map(&:id))
+                       .where.not(id: current_profile.requested_friends.map(&:id))
   end
 
   def show
