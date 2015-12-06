@@ -30,7 +30,11 @@ $(document).on('page:change', function() {
     }
   });
 
+  $(".js-close").on("click", function() {
+    $(this).parent().parent().fadeOut(200);
+  })
+
   setTimeout(function(){
-    $('.flash').fadeOut();
+    $('.flash').fadeOut(200);
   }, 2000);
 });
