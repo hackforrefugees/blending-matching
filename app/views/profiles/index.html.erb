@@ -1,7 +1,7 @@
 <div class="profiles">
   <% if current_profile.friends.present? %>
     <div class="profiles__header">
-      Your friends
+      Your befriended families
     </div>
     <% current_profile.friends.each do |friend| %>
       <%= render friend %>
