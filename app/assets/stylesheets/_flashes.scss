@@ -1,9 +1,9 @@
 .flash {
   position: absolute;
   background: #fff;
-  top: 1rem;
+  top: 1.5rem;
   padding: 1rem;
-  margin-top: 1rem;
+  // margin-top: 1rem;
   border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
@@ -11,6 +11,7 @@
   right: 0;
   width: 300px;
   text-align: center;
+  border: 1px solid $color-offwhite;
 }
 
 .flash--notice {
