@@ -1,11 +1,18 @@
 .profiles {
 }
 
+.profiles__header {
+  border-bottom: 1px solid $color-offwhite;
+  font-size: .8rem;
+  letter-spacing: 1px;
+  padding: .5rem 1rem;
+}
+
 .profiles__profile {
   @include clearfix;
+  // border-bottom: 1px dashed $color-offwhite;
   color: $color-offblack;
   padding: 1rem;
-  border-bottom: 1px solid $color-offwhite;
 }
 
 .profiles__profile__picture {
