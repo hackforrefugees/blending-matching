@@ -17,12 +17,14 @@
 @import "bourbon";
 @import "selectize";
 @import "color";
+
+@import "buttons";
+@import "flashes";
+@import "forms";
 @import "navbar";
 @import "profile";
 @import "profiles";
 @import "tags";
-@import "forms";
-@import "buttons";
 
 html {
   box-sizing: border-box;
@@ -37,6 +39,7 @@ html {
 }
 
 body {
+  position: relative;
   color: $color-offblack;
   line-height: 1.4;
 }

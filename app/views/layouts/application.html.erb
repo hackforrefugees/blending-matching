@@ -19,14 +19,14 @@
   <% end %>
 
   <% if notice.present? %>
-    <p class="notice">
+    <div class="flash flash--notice">
       <%= notice %>
-    </p>
+    </div>
   <% end %>
   <% if alert.present? %>
-    <p class="alert">
+    <div class="flash flash--alert">
       <%= alert %>
-    </p>
+    </div>
   <% end %>
 
   <%= yield %>
