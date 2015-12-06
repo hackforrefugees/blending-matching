@@ -6,10 +6,10 @@ class FriendshipsController < ApplicationController
 
     if @friendship.save
       flash[:notice] = "Friendship requested."
-      redirect_to root_url
+      redirect_to :back
     else
       flash[:error] = "Unable to add friend."
-      redirect_to root_url
+      redirect_to :back
     end
   end
 
@@ -17,9 +17,9 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
     @friendship.update(accepted: true)
       if @friendship.save
-        redirect_to root_url, :notice => "Successfully accpeted friendship!"
+        redirect_to :back, :notice => "Successfully accpeted friendship!"
       else
-        redirect_to root_url, :notice => "Sorry! Could not accept friendship!"
+        redirect_to :back, :notice => "Sorry! Could not accept friendship!"
       end
     end
 

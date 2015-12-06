@@ -1,12 +1,25 @@
 <div class="profiles">
-  <% current_profile.friends.each do |friend| %>
-    <%= render friend %>
+  <% if current_profile.friends.present? %>
+    <div class="profiles__header">
+      Your friends
+    </div>
+    <% current_profile.friends.each do |friend| %>
+      <%= render friend %>
+    <% end %>
   <% end %>
 
-  <% current_profile.requested_friends.each do |friend| %>
-    <%= render friend %>
+  <% if current_profile.requested_friends.present? %>
+    <div class="profiles__header">
+      Friend requests
+    </div>
+    <% current_profile.requested_friends.each do |friend| %>
+      <%= render friend %>
+    <% end %>
   <% end %>
 
+  <div class="profiles__header">
+    Families
+  </div>
   <% @profiles.each do |profile| %>
     <%= render profile %>
   <% end %>

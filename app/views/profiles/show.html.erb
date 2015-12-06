@@ -3,16 +3,21 @@
     <%= @profile.name %>
   </div>
 
-  <%= image_tag @profile.picture, class: "profile__picture" %>
+  <%#= image_tag @profile.picture, class: "profile__picture" %>
+  <%= image_tag "http://www.hashkitten.com/500/300/#{@profile.id}", class: "profile__picture" %>
 
   <% if @profile != current_profile %>
     <div class="friendship">
       <% if current_profile.friends.include? @profile %>
-        You are friends
+        You are friends<br>
+        <%= link_to "Unfriend", current_profile.friendship_for(@profile), :method => :delete %><br>
+        <%= mail_to @profile.email, "Contact this family" %>
       <% elsif current_profile.pending_friends.include? @profile %>
-        Your friend request is pending
+        Your friend request is pending<br>
+        <%= link_to "Cancel friend request", current_profile.friendship_for(@profile), :method => :delete %>
       <% elsif current_profile.requested_friends.include? @profile %>
-        <%= link_to "Accept friend request", current_profile.friendship_for(@profile), :method => :put %>
+        <%= link_to "Accept friend request", current_profile.friendship_for(@profile), :method => :put %><br>
+        <%= link_to "Decline friend request", current_profile.friendship_for(@profile), :method => :delete %>
       <% else %>
         <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
       <% end %>
