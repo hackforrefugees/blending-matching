@@ -5,11 +5,6 @@
     <div class="profiles__profile__content">
       <div class="profiles__profile__content__name">
         <%= profile.name %>
-        <% if current_profile.friends.include? profile %>
-          You are friends
-        <% elsif current_profile.requested_friends.include? profile %>
-          Awaiting your accept
-        <% end %>
       </div>
       <div class="tags">
         <% profile.tags.each do |tag| %>
