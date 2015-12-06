@@ -12,8 +12,8 @@
     </div>
   </div>
 
-  <%#= image_tag @profile.picture, class: "profile__picture" %>
-  <%= image_tag "http://www.hashkitten.com/500/300/#{@profile.id}", class: "profile__picture" %>
+  <%= image_tag @profile.picture, class: "profile__picture" %>
+  <%#= image_tag "http://www.hashkitten.com/500/300/#{@profile.id}", class: "profile__picture" %>
 
   <div class="container">
     <% if @profile != current_profile %>
