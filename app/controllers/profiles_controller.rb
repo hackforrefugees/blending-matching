@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
     @profile = current_profile
 
     if @profile.update(profile_params)
-      redirect_to :profiles, notice: "Profile was successfully updated"
+      redirect_to @profile, notice: "Profile was successfully updated"
     else
       render :edit
     end
