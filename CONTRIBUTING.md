@@ -1,3 +1,9 @@
-If you're looking for more people to help out with the project
-If there is someone else who will be managing the project, or if there's any organization involved
-Contact info to those parties in CONTACT.md
+## What we need
+
+- Product owner, someone who knows what is needed for blending families. Perhaps goteborg.se/flyktingguide would be interested.
+
+- People who can connect us with users, both swedish families and new families. Refugee phones? Volunteer organizations? Black dot?
+
+## What we have
+
+- Offered Hosting by Yashar (yashar@lingio.co)
