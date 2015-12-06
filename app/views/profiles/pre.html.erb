@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="navbar__brand"><%= link_to "Blending", root_path %></div>
+</nav>
+
+<div class="container u-center">
+  <div class="pre">
+    <div class="pre__alt">
+      <p>We are a family who are new to Sweden</p>
+      <div class="pre__button">
+        <%= link_to "We're new", new_profile_registration_path(native: false), class: "button button--alt" %>
+      </div>
+    </div>
+    <div class="pre__alt">
+      <p>We are a family who have lived here for a long time</p>
+      <div class="pre__button">
+        <%= link_to "We're from here", new_profile_registration_path(native: true), class: "button button--alt" %>
+      </div>
+    </div>
+  </div>
+</div>

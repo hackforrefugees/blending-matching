@@ -10,7 +10,7 @@
       <%= debug resource.errors.full_messages %>
     <% end %>
 
-    <%= f.hidden_field :native %>
+    <%= f.hidden_field :native, value: params[:native] %>
 
     <div class="form__field">
       <%= f.label :name, class: "form__label" %>

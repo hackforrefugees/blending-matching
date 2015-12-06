@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_profile!
+  before_action :authenticate_profile!, except: :pre
 
   def index
     @profiles = Profile.where(location: current_profile.location)
@@ -13,6 +13,9 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def pre
+  end
+
   def edit
     @profile = current_profile
   end
@@ -21,7 +24,7 @@ class ProfilesController < ApplicationController
     @profile = current_profile
 
     if @profile.update(profile_params)
-      redirect_to :profiles, notice: "Profile was successfully updated"
+      redirect_to @profile, notice: "Profile was successfully updated"
     else
       render :edit
     end
@@ -30,6 +33,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :description, :native, :location_id, :picture)
+    params.require(:profile).permit(:name, :description, :native, :location_id, :picture, :tag_list)
   end
 end
