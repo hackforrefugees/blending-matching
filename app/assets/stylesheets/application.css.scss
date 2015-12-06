@@ -25,12 +25,13 @@
 @import "profile";
 @import "profiles";
 @import "tags";
+@import "welcome";
 
 html {
   box-sizing: border-box;
   height: 100%;
   font-size: 18px;
-  // font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
 }
 
@@ -42,6 +43,7 @@ body {
   position: relative;
   color: $color-offblack;
   line-height: 1.4;
+  height: 100%;
 }
 
 a {

@@ -4,7 +4,7 @@
   <% end -%>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    If you don't have an account, <%= link_to "sign up", new_registration_path(resource_name) %><br />
+    If you don't have an account, <%= link_to "sign up", pre_profiles_path %><br />
   <% end -%>
 
   <!--

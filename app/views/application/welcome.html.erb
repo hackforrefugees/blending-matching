@@ -1,17 +1,21 @@
 
-<div class="container">
+<div class="welcome u-center">
 
-<div style="font-size: 8rem;">
-👨‍👩‍👦‍👦
-👨‍👨‍👧‍👧
-</div>
+  <div class="welcome__heading">
+    <div class="welcome__heading__header">
+      <h1 class="welcome__heading__header__h1">Welcome to <br/>Blending</h1>
+    </div>
+  </div>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-
-<%= link_to "Sign in", new_profile_session_path, class: "button" %>
-<%= link_to "Sign up", pre_profiles_path, class: "button" %>
-
+  <div class="welcome__content container">
+    <p>
+      Blending allows families to connect and share experiences. By matching families that have recently arrived in Sweden, with families who have lived here all their lives, we hope to enrich the lives of all involved.
+    </p>
+    <div class="welcome__content__button">
+      <%= link_to "Login", new_profile_session_path, class: "button button--secondary button--block" %>
+    </div>
+    <div class="welcome__content__button">
+      <%= link_to "Signup", pre_profiles_path, class: "button button--secondary button--block" %>
+    </div>
+  </div>
 </div>
