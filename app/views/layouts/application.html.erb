@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -18,14 +19,14 @@
   <% end %>
 
   <% if notice.present? %>
-    <p class="notice">
+    <div class="flash flash--notice">
       <%= notice %>
-    </p>
+    </div>
   <% end %>
   <% if alert.present? %>
-    <p class="alert">
+    <div class="flash flash--alert">
       <%= alert %>
-    </p>
+    </div>
   <% end %>
 
   <%= yield %>

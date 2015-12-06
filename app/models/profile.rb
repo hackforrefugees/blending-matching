@@ -4,7 +4,6 @@ class Profile < ActiveRecord::Base
   belongs_to :location, required: true
 
   validates :name, presence: true
-  validates :description, presence: true
 
   mount_uploader :picture, ProfilePictureUploader
 

@@ -31,8 +31,10 @@
       <p><%= @profile.description %></p>
     </div>
 
-    <p>
-      <%= link_to "Edit your profile", edit_profile_path %>
-    </p>
+    <% if @profile == current_profile %>
+      <p>
+        <%= link_to "Edit your profile", edit_profile_path %>
+      </p>
+    <% end %>
   </div>
 </div>

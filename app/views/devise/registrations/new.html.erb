@@ -1,49 +1,44 @@
-<h2>Sign up</h2>
+<nav class="navbar">
+  <div class="navbar__brand"><%= link_to "Blending", root_path %></div>
+</nav>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="container">
+  <!-- <h2>Sign up</h2> -->
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f| %>
+    <% if resource.errors.present? %>
+      <%= debug resource.errors.full_messages %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :location_id %><br />
-    <%= f.collection_select :location_id, Location.all, :id, :name %>
-  </div>
+    <%= f.hidden_field :native %>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+    <div class="form__field">
+      <%= f.label :name, class: "form__label" %>
+      <%= f.text_field :name, class: "form__input" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :native %><br />
-    <%= f.check_box :native %>
-  </div>
+    <div class="form__field">
+      <%= f.label :location_id, class: "form__label" %>
+      <%= f.collection_select :location_id, Location.all, :id, :name, {}, class: "select-box" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
+    <div class="form__field">
+      <%= f.label :email, class: "form__label" %>
+      <%= f.email_field :email, class: "form__input" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="form__field">
+      <%= f.label :password, class: "form__label" %>
+      <%= f.password_field :password, autocomplete: "off", class: "form__input" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="form__field">
+      <%= f.label :password_confirmation, class: "form__label" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form__input" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <%= f.submit "Sign up", class: "button button--block" %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

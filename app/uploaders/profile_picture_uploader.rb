@@ -52,4 +52,8 @@ class ProfilePictureUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  # HACK: https://github.com/carrierwaveuploader/carrierwave/wiki/how-to%3A-make-carrierwave-work-on-heroku
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
 end
