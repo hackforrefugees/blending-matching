@@ -20,11 +20,13 @@
 
   <% if notice.present? %>
     <div class="flash flash--notice">
+      <span class="flash__close"><%= image_tag "x.svg", class: "js-close" %></span>
       <%= notice %>
     </div>
   <% end %>
   <% if alert.present? %>
     <div class="flash flash--alert">
+      <span class="flash__close"><%= image_tag "x.svg", class: "js-close" %></span>
       <%= alert %>
     </div>
   <% end %>
