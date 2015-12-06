@@ -6,6 +6,9 @@
       <div class="profiles__profile__content__name">
         <%= profile.name %>
       </div>
+      <div class="profiles__profile__content__description">
+        <%= truncate profile.description, length: 50 %>
+      </div>
       <div class="tags">
         <% profile.tags.each do |tag| %>
           <span class="tags__tag"><%= tag %></span>
