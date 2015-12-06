@@ -1,1 +1,1 @@
-Contact
+Fanny Lindh fannylindh@gmail.com
