@@ -7,16 +7,10 @@ class ProfilesController < ApplicationController
                        .where.not(native: current_profile.native)
                        .where.not(id: current_profile.friends.map(&:id))
                        .where.not(id: current_profile.requested_friends.map(&:id))
-  end
 
-  def search
-    @profiles = Profile.where(location: current_profile.location)
-                       .where.not(id: current_profile.id)
-                       .where.not(native: current_profile.native)
-                       .where.not(id: current_profile.friends.map(&:id))
-                       .where.not(id: current_profile.requested_friends.map(&:id))
-                       .tagged_with(params[:q].split(","))
-    render :index
+    if params[:q].present?
+      @profiles = @profiles.tagged_with(params[:q].split(","))
+    end
   end
 
   def show

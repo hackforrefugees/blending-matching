@@ -28,12 +28,12 @@
 
   <div class="profiles__search">
     <div class="container">
-      <%= form_tag(search_profiles_path, method: "get") do %>
+      <%= form_tag(profiles_path, method: "get") do %>
         <div class="form__field" >
           <%= label_tag :q, "Find families with these interests:", class: "form__label" %>
-          <%= text_field_tag :q, nil, class: "form__input profiles__search__search-field", class: "tag-box" %>
-          <%= submit_tag "Filter", class:"button" %>
-          <%= link_to "Clear", profiles_path, class: "button"%>
+          <%= text_field_tag :q, params[:q], class: "form__input profiles__search__search-field", class: "tag-box" %>
+          <%= submit_tag "Filter", class:"button button--small", style: "margin-top: .5rem" %>
+          <%= link_to "Clear", profiles_path, class: "button button--small"%>
         </div>
       <% end %>
     </div>
