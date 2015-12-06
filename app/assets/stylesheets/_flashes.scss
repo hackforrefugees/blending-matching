@@ -1,0 +1,25 @@
+.flash {
+  position: absolute;
+  background: #fff;
+  top: .75rem;
+  padding: 1rem 1.5em;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 300px;
+  text-align: center;
+  border: 1px solid $color-offwhite;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.flash__close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  img {
+    width: 100%;
+    max-width: 12px;
+  }
+}

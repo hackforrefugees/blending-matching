@@ -1,0 +1,32 @@
+.navbar {
+  @include clearfix;
+  background: $color-primary;
+  width: 100%;
+}
+
+.navbar__item {
+  color: $color-offwhite;
+  display: block;
+  float: left;
+  width: 25%;
+
+  img {
+    display: block;
+    height: 30px;
+    margin: 1.25rem auto;
+  }
+}
+
+.navbar__brand {
+  font-size: 1.25rem;
+  line-height: 2.5;
+  text-align: center;
+
+  a {
+    color: $color-offwhite;
+  }
+}
+
+.current-page {
+  background: darken($color-primary, 10%)
+}

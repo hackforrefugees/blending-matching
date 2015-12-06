@@ -1,0 +1,21 @@
+<%= link_to profile do %>
+  <div class="profiles__profile">
+    <%#= image_tag profile.picture, class: "profiles__profile__picture" %>
+    <%= image_tag "http://www.hashkitten.com/500/500/#{profile.id}", class: "profiles__profile__picture" %>
+    <div class="profiles__profile__content">
+      <div class="profiles__profile__content__name">
+        <%= profile.name %>
+        <% if current_profile.friends.include? profile %>
+          You are friends
+        <% elsif current_profile.requested_friends.include? profile %>
+          Awaiting your accept
+        <% end %>
+      </div>
+      <div class="tags">
+        <% profile.tags.each do |tag| %>
+          <span class="tags__tag"><%= tag %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

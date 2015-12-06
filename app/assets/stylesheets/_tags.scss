@@ -1,0 +1,11 @@
+.tags {
+  font-size: 1rem;
+}
+
+.tags__tag {
+  display: inline-block;
+  border: 1px solid $color-offwhite;
+  border-radius: 4px;
+  padding: .25rem;
+  margin-bottom: .25rem;
+}

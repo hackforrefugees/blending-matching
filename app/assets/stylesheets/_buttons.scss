@@ -1,0 +1,28 @@
+.button {
+  background: none;
+  border-radius: 3px;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  padding: .65rem 2rem;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--accent {
+  background: $color-accent;
+  color: #fff;
+  border: 1px solid $color-accent;
+}
+
+.button--alt {
+  color: $color-accent;
+  border: 1px solid $color-accent;
+}
+
+.button--secondary {
+  color: #fff;
+  border: 1px solid #fff;
+}

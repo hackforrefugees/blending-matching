@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blending</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,300,100" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <% if signed_in? %>
+    <nav class="navbar">
+      <%= link_to image_tag("blender.svg"), profiles_path, class: "#{current_page(profiles_path)} navbar__item" %>
+      <%= link_to image_tag("family.svg"), profile_path(current_profile), class: "#{current_page(profile_path(current_profile))} #{current_page(edit_profile_path)} navbar__item" %>
+      <%= link_to image_tag("chat.svg"), "#", class: "navbar__item" %>
+      <%= link_to image_tag("settings.svg"), edit_profile_registration_path(current_profile), class: "#{current_page(edit_profile_registration_path(current_profile))} navbar__item" %>
+    </nav>
+  <% end %>
+
+  <% if notice.present? %>
+    <div class="flash flash--notice">
+      <span class="flash__close"><%= image_tag "x.svg", class: "js-close" %></span>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert.present? %>
+    <div class="flash flash--alert">
+      <span class="flash__close"><%= image_tag "x.svg", class: "js-close" %></span>
+      <%= alert %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</body>
+</html>

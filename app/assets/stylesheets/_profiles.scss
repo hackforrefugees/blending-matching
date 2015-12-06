@@ -1,0 +1,44 @@
+.profiles {
+}
+
+.profiles__header {
+  border-bottom: 1px solid $color-offwhite;
+  font-size: .8rem;
+  letter-spacing: 1px;
+  padding: .5rem 1rem;
+}
+
+.profiles__profile {
+  @include clearfix;
+  // border-bottom: 1px dashed $color-offwhite;
+  color: $color-offblack;
+  padding: 1rem;
+}
+
+.profiles__profile__picture {
+  float: left;
+  width: 25%;
+  border-radius: 50%;
+}
+
+.profiles__profile__content {
+  width: 75%;
+  padding-left: 1rem;
+  float: left;
+}
+
+.profiles__profile__content__name {
+  font-size: 1.25rem;
+}
+
+.pre {
+  padding-top: 60px;
+}
+
+.pre__alt {
+  margin-top: 2.5rem;
+}
+
+.pre__button {
+  padding: 10px;
+}

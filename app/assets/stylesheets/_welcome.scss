@@ -1,0 +1,38 @@
+.welcome {
+  color: #fff;
+  min-height: 100%;
+  background: $color-primary;
+}
+
+.welcome__heading {
+  background-image: image-url("fam.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 15rem;
+}
+
+.welcome__heading__header {
+  bottom: 0.8rem;
+  width: 100%;
+  text-align: center;
+  padding-top: 140px;
+}
+
+.welcome__heading__header__h1 {
+  font-size: 48px;
+  font-weight: 100;
+  margin: 0;
+  line-height: 3.2rem;
+}
+
+.welcome__content {
+  p {
+    margin-bottom: 40px;
+  }
+}
+
+.welcome__content__button {
+  width: 160px;
+  padding: 5px 0;
+  margin: 0 auto;
+}

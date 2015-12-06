@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: blending_development
+  username: blending_development
+  password:
+
+test:
+  <<: *default
+  database: blending_test
+  username: blending_test
+  password:

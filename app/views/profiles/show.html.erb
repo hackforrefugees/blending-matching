@@ -1,0 +1,44 @@
+<div class="profile">
+  <div class="profile__name container">
+    <%= @profile.name %>
+  </div>
+
+  <%#= image_tag @profile.picture, class: "profile__picture" %>
+  <%= image_tag "http://www.hashkitten.com/500/300/#{@profile.id}", class: "profile__picture" %>
+
+  <% if @profile != current_profile %>
+    <div class="friendship">
+      <% if current_profile.friends.include? @profile %>
+        You are friends<br>
+        <%= link_to "Unfriend", current_profile.friendship_for(@profile), :method => :delete %><br>
+        <%= mail_to @profile.email, "Contact this family" %>
+      <% elsif current_profile.pending_friends.include? @profile %>
+        Your friend request is pending<br>
+        <%= link_to "Cancel friend request", current_profile.friendship_for(@profile), :method => :delete %>
+      <% elsif current_profile.requested_friends.include? @profile %>
+        <%= link_to "Accept friend request", current_profile.friendship_for(@profile), :method => :put %><br>
+        <%= link_to "Decline friend request", current_profile.friendship_for(@profile), :method => :delete %>
+      <% else %>
+        <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="profile__tags tags">
+      <% @profile.tags.each do |tag| %>
+        <span class="tags__tag"><%= tag %></span>
+      <% end %>
+    </div>
+
+    <div class="profile__description">
+      <p><%= @profile.description %></p>
+    </div>
+
+    <% if @profile == current_profile %>
+      <p>
+        <%= link_to "Edit your profile", edit_profile_path %>
+      </p>
+    <% end %>
+  </div>
+</div>
