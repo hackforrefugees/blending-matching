@@ -2,8 +2,6 @@ class Profile < ActiveRecord::Base
   include Tagliatelle::Taggable
 
   belongs_to :location, required: true
-  has_many :friendships
-  has_many :friends, :through => :friendships
 
   validates :name, presence: true
   validates :description, presence: true
@@ -15,24 +13,38 @@ class Profile < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  #  def friends_with?(profile)
+  #    friendships.include?(profile)
+  #  end
+  #
+  # def accepted_friends_with?(profile)
+  #   friendships.accepted.include?(profile)
+  # end
+
   def friend_status (profile)
-    friendship = Friendship.where("requester_id = ? AND requestee_id = ?", profile.id, self.id)
-    if (!friendship.empty?)
-      if (friendship.first.accepted)
-        return :accepted
+    friendships = Friendship.where("requester_id = ? AND requestee_id = ?", profile.id, self.id)
+    if (!friendships.empty?)
+      friendship = friendships.first
+      if (friendship.accepted)
+        friendship.status = :accepted
+        return friendship
       else
-        return :awaiting_your_reply
+        friendship.status = :awaiting_your_reply
+        return friendship
       end
     else
-      friendship = Friendship.where("requester_id = ? AND requestee_id = ?", self.id, profile.id)
-      if (!friendship.empty?)
-        if (friendship.first.accepted)
-          return :accepted
+      friendships = Friendship.where("requester_id = ? AND requestee_id = ?", self.id, profile.id)
+      if (!friendships.empty?)
+        friendship = friendships.first
+        if (friendship.accepted)
+          friendship.status = :accepted
+          return friendship
         else
-          return :pending
+          friendship.status = :pending
+          return friendship
         end
       else
-        return :available
+        return nil
       end
     end
   end

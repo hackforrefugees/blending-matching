@@ -7,15 +7,15 @@
 
   <% if @profile != current_profile %>
     <div class="friendship">
-      <% friend_status = current_profile.friend_status(@profile) %>
-      <% if (friend_status == :accepted) %>
-        You are friends
-      <% elsif (friend_status == :awaiting_your_reply) %>
-        Accept friend request
-      <% elsif friend_status == :pending %>
-        Your friend request is pending
-      <% else %>
+      <% friendship = current_profile.friend_status(@profile) %>
+      <% if friendship == nil %>
         <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
+      <% elsif (friendship.status == :accepted) %>
+        You are friends
+      <% elsif (friendship.status == :awaiting_your_reply) %>
+        <%= link_to "Accept friend request", friendship_path(:id => friendship), :method => :put %>
+      <% elsif friendship.status == :pending %>
+        Your friend request is pending
       <% end %>
     </div>
   <% end %>
