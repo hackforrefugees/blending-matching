@@ -17,7 +17,7 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
     @friendship.update(accepted: true)
       if @friendship.save
-        redirect_to :back, :notice => "Successfully accpeted friendship!"
+        redirect_to :back, :notice => "Successfully accepted friendship!"
       else
         redirect_to :back, :notice => "Sorry! Could not accept friendship!"
       end

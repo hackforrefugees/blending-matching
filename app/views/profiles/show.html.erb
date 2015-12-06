@@ -1,34 +1,50 @@
 <div class="profile">
   <div class="profile__name container">
     <%= @profile.name %>
+    <div style="float: right; margin-top: .25rem;">
+      <% if current_profile.friends.include? @profile %>
+        <%= image_tag("accepted_blend.svg", class: "friend__icon") %>
+      <% elsif current_profile.pending_friends.include? @profile %>
+        <%= image_tag("pending_blend.svg", class: "friend__icon") %>
+      <% elsif current_profile.requested_friends.include? @profile %>
+        <%= image_tag("pending_blend.svg", class: "friend__icon") %>
+      <% end %>
+    </div>
   </div>
 
   <%#= image_tag @profile.picture, class: "profile__picture" %>
   <%= image_tag "http://www.hashkitten.com/500/300/#{@profile.id}", class: "profile__picture" %>
 
-  <% if @profile != current_profile %>
-    <div class="friendship">
-      <% if current_profile.friends.include? @profile %>
-        <%= image_tag("accepted_blend.svg", class: "friend__icon") %>
-        You are friends<br>
-        <%= link_to "Unfriend", current_profile.friendship_for(@profile), :method => :delete %><br>
-        <%= mail_to @profile.email, "Contact this family" %>
-      <% elsif current_profile.pending_friends.include? @profile %>
-        <%= image_tag("pending_blend.svg", class: "friend__icon") %>
-        Your friend request is pending<br>
-        <%= link_to "Cancel friend request", current_profile.friendship_for(@profile), :method => :delete %>
-      <% elsif current_profile.requested_friends.include? @profile %>
-        <%= image_tag("pending_blend.svg", class: "friend__icon") %>
-        <%= link_to "Accept friend request", current_profile.friendship_for(@profile), :method => :put %><br>
-        <%= link_to "Decline friend request", current_profile.friendship_for(@profile), :method => :delete %>
-      <% else %>
-        <%= image_tag("add_blend.svg", class: "friend__icon") %>
-        <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post %>
-      <% end %>
-    </div>
-  <% end %>
-
   <div class="container">
+    <% if @profile != current_profile %>
+      <div class="profile__friendship">
+
+        <% if current_profile.friends.include? @profile %>
+          <div style="margin-bottom: .5rem;">You are friends!</div>
+          <div class="button-group">
+            <%= mail_to @profile.email, "Contact this family", class: "button button--small" %>
+            <%= link_to "Unfriend this family", current_profile.friendship_for(@profile), :method => :delete, class: "button button--small" %>
+          </div>
+
+        <% elsif current_profile.pending_friends.include? @profile %>
+          <div class="button-group">
+            <%= link_to "Cancel friend request", current_profile.friendship_for(@profile), :method => :delete, class: "button button--small" %>
+          </div>
+
+        <% elsif current_profile.requested_friends.include? @profile %>
+          <div class="button-group">
+            <%= link_to "Accept friend request", current_profile.friendship_for(@profile), :method => :put, class: "button button--small" %>
+            <%= link_to "Decline friend request", current_profile.friendship_for(@profile), :method => :delete, class: "button button--small" %>
+          </div>
+
+        <% else %>
+          <div class="button-group">
+            <%= link_to "Add Friend", friendships_path(:requestee_id => @profile), :method => :post, class: "button button--small" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="profile__tags tags">
       <% @profile.tags.each do |tag| %>
         <span class="tags__tag"><%= tag %></span>

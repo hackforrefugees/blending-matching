@@ -1,3 +1,7 @@
+.button-group {
+  margin-bottom: 1rem;
+}
+
 .button {
   background: none;
   border-radius: 3px;
@@ -9,6 +13,11 @@
 .button--block {
   display: block;
   width: 100%;
+}
+
+.button--small {
+  font-size: .85rem;
+  padding: .25rem;
 }
 
 .button--accent {
