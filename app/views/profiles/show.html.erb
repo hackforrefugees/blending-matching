@@ -3,7 +3,8 @@
     <%= @profile.name %>
   </div>
 
-  <%= image_tag @profile.picture, class: "profile__picture" %>
+  <%#= image_tag @profile.picture, class: "profile__picture" %>
+  <%= image_tag "http://www.hashkitten.com/500/300/#{@profile.id}", class: "profile__picture" %>
 
   <% if @profile != current_profile %>
     <div class="friendship">

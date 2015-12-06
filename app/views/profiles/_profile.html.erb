@@ -1,6 +1,7 @@
 <%= link_to profile do %>
   <div class="profiles__profile">
-    <%= image_tag profile.picture, class: "profiles__profile__picture" %>
+    <%#= image_tag profile.picture, class: "profiles__profile__picture" %>
+    <%= image_tag "http://www.hashkitten.com/500/500/#{profile.id}", class: "profiles__profile__picture" %>
     <div class="profiles__profile__content">
       <div class="profiles__profile__content__name">
         <%= profile.name %>
