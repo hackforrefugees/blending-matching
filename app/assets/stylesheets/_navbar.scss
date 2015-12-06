@@ -9,13 +9,23 @@
   display: block;
   float: left;
   text-align: center;
-  text-decoration: none;
   width: 25%;
   img {
     height: 30px;
     margin: 15px 0;
   }
 }
+
+.navbar__brand {
+  font-size: 1.25rem;
+  line-height: 2.5;
+  text-align: center;
+
+  a {
+    color: $color-offwhite;
+  }
+}
+
 .current-page {
   background: darken($color-primary, 10%)
 }

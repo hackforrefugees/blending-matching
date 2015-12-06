@@ -1,7 +1,12 @@
 .button {
-  background: $color-primary;
+  background: none;
   border-radius: 4px;
-  border: none;
-  color: $color-offwhite;
+  border: 1px solid $color-primary;
+  color: $color-primary;
   padding: .75rem 2rem;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
 }

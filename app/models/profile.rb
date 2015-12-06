@@ -6,7 +6,6 @@ class Profile < ActiveRecord::Base
   has_many :friends, :through => :friendships
 
   validates :name, presence: true
-  validates :description, presence: true
 
   mount_uploader :picture, ProfilePictureUploader
 

@@ -27,6 +27,9 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  font-size: 18px;
+  // font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
 
 *, *:before, *:after {
@@ -40,6 +43,14 @@ body {
 
 a {
   color: $color-primary;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 img {
@@ -48,4 +59,8 @@ img {
 
 .container {
   padding: 1rem;
+}
+
+.u-center {
+  text-align: center;
 }
