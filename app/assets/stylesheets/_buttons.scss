@@ -10,3 +10,9 @@
   display: block;
   width: 100%;
 }
+
+.button--alt {
+  background: $color-accent;
+  color: #fff;
+  border: 1px solid $color-accent;
+}

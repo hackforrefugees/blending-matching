@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_profile!
+  before_action :authenticate_profile!, except: :pre
 
   def index
     @profiles = Profile.where(location: current_profile.location)
@@ -9,6 +9,9 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+  end
+
+  def pre
   end
 
   def edit
