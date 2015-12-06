@@ -22,4 +22,11 @@ class FriendshipsController < ApplicationController
         redirect_to root_url, :notice => "Sorry! Could not accept friendship!"
       end
     end
+
+  def destroy
+    @friendship = Friendship.find(params[:id])
+    @friendship.destroy
+    flash[:notice] = "Removed friendship."
+    redirect_to :back
+  end
 end

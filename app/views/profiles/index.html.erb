@@ -1,19 +1,17 @@
 <div class="profiles">
+  <% current_profile.friends.each do |friend| %>
+    <%= render friend %>
+  <% end %>
+
+  ----------------
+
+  <% current_profile.requested_friends.each do |friend| %>
+    <%= render friend %>
+  <% end %>
+
+  ----------------
+
   <% @profiles.each do |profile| %>
-    <%= link_to profile do %>
-      <div class="profiles__profile">
-        <%= image_tag profile.picture, class: "profiles__profile__picture" %>
-        <div class="profiles__profile__content">
-          <div class="profiles__profile__content__name">
-            <%= profile.name %>
-          </div>
-          <div class="tags">
-            <% profile.tags.each do |tag| %>
-              <span class="tags__tag"><%= tag %></span>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render profile %>
   <% end %>
 </div>
