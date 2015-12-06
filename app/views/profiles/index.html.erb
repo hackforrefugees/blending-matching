@@ -3,13 +3,9 @@
     <%= render friend %>
   <% end %>
 
-  ----------------
-
   <% current_profile.requested_friends.each do |friend| %>
     <%= render friend %>
   <% end %>
-
-  ----------------
 
   <% @profiles.each do |profile| %>
     <%= render profile %>
