@@ -1,0 +1,67 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddAvatarToProfiles	db/migrate/20151205125603_add_avatar_to_profiles.rb	/^class AddAvatarToProfiles < ActiveRecord::Migration$/;"	c
+AddDescriptionToProfile	db/migrate/20151205124053_add_description_to_profile.rb	/^class AddDescriptionToProfile < ActiveRecord::Migration$/;"	c
+AddLocationToProfile	db/migrate/20151205110203_add_location_to_profile.rb	/^class AddLocationToProfile < ActiveRecord::Migration$/;"	c
+AddNameToProfile	db/migrate/20151205110808_add_name_to_profile.rb	/^class AddNameToProfile < ActiveRecord::Migration$/;"	c
+AddNativeToProfile	db/migrate/20151205124146_add_native_to_profile.rb	/^class AddNativeToProfile < ActiveRecord::Migration$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Blending
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Blending	config/application.rb	/^module Blending$/;"	m
+ChangeColumnDefaultAcceptedInFriendship	db/migrate/20151206103554_change_column_default_accepted_in_friendship.rb	/^class ChangeColumnDefaultAcceptedInFriendship < ActiveRecord::Migration$/;"	c
+ChangeProfileColumnName	db/migrate/20151205133403_change_profile_column_name.rb	/^class ChangeProfileColumnName < ActiveRecord::Migration$/;"	c
+CreateFriendships	db/migrate/20151205162853_create_friendships.rb	/^class CreateFriendships < ActiveRecord::Migration$/;"	c
+CreateLocations	db/migrate/20151205110040_create_locations.rb	/^class CreateLocations < ActiveRecord::Migration$/;"	c
+CreateTagsAndTaggings	db/migrate/20151205125535_create_tags_and_taggings.tagliatelle.rb	/^class CreateTagsAndTaggings < ActiveRecord::Migration$/;"	c
+DeviseCreateProfiles	db/migrate/20151205102859_devise_create_profiles.rb	/^class DeviseCreateProfiles < ActiveRecord::Migration$/;"	c
+Friendship	app/models/friendship.rb	/^class Friendship < ActiveRecord::Base$/;"	c
+FriendshipTest	test/models/friendship_test.rb	/^class FriendshipTest < ActiveSupport::TestCase$/;"	c
+FriendshipsController	app/controllers/friendships_controller.rb	/^class FriendshipsController < ApplicationController$/;"	c
+FriendshipsControllerTest	test/controllers/friendships_controller_test.rb	/^class FriendshipsControllerTest < ActionController::TestCase$/;"	c
+FriendshipsHelper	app/helpers/friendships_helper.rb	/^module FriendshipsHelper$/;"	m
+Location	app/models/location.rb	/^class Location < ActiveRecord::Base$/;"	c
+LocationTest	test/models/location_test.rb	/^class LocationTest < ActiveSupport::TestCase$/;"	c
+Profile	app/models/profile.rb	/^class Profile < ActiveRecord::Base$/;"	c
+ProfilePictureUploader	app/uploaders/profile_picture_uploader.rb	/^class ProfilePictureUploader < CarrierWave::Uploader::Base$/;"	c
+ProfileTest	test/models/profile_test.rb	/^class ProfileTest < ActiveSupport::TestCase$/;"	c
+ProfilesController	app/controllers/profiles_controller.rb	/^class ProfilesController < ApplicationController$/;"	c
+RegistrationsController	app/controllers/registrations_controller.rb	/^class RegistrationsController < Devise::RegistrationsController$/;"	c
+Tag	app/models/tag.rb	/^class Tag < ActiveRecord::Base$/;"	c
+Tagging	app/models/tagging.rb	/^class Tagging < ActiveRecord::Base$/;"	c
+after_sign_in_path_for	app/controllers/application_controller.rb	/^  def after_sign_in_path_for(_resource)$/;"	f	class:ApplicationController
+after_sign_up_path_for	app/controllers/registrations_controller.rb	/^  def after_sign_up_path_for(_resource)$/;"	f	class:RegistrationsController
+cache_dir	app/uploaders/profile_picture_uploader.rb	/^  def cache_dir$/;"	f	class:ProfilePictureUploader
+change	db/migrate/20151205102859_devise_create_profiles.rb	/^  def change$/;"	f	class:DeviseCreateProfiles
+change	db/migrate/20151205110040_create_locations.rb	/^  def change$/;"	f	class:CreateLocations
+change	db/migrate/20151205110203_add_location_to_profile.rb	/^  def change$/;"	f	class:AddLocationToProfile
+change	db/migrate/20151205110808_add_name_to_profile.rb	/^  def change$/;"	f	class:AddNameToProfile
+change	db/migrate/20151205124053_add_description_to_profile.rb	/^  def change$/;"	f	class:AddDescriptionToProfile
+change	db/migrate/20151205124146_add_native_to_profile.rb	/^  def change$/;"	f	class:AddNativeToProfile
+change	db/migrate/20151205125535_create_tags_and_taggings.tagliatelle.rb	/^  def change$/;"	f	class:CreateTagsAndTaggings
+change	db/migrate/20151205125603_add_avatar_to_profiles.rb	/^  def change$/;"	f	class:AddAvatarToProfiles
+change	db/migrate/20151205133403_change_profile_column_name.rb	/^  def change$/;"	f	class:ChangeProfileColumnName
+change	db/migrate/20151205162853_create_friendships.rb	/^  def change$/;"	f	class:CreateFriendships
+change	db/migrate/20151206103554_change_column_default_accepted_in_friendship.rb	/^  def change$/;"	f	class:ChangeColumnDefaultAcceptedInFriendship
+configure_permitted_parameters	app/controllers/application_controller.rb	/^  def configure_permitted_parameters$/;"	f	class:ApplicationController
+create	app/controllers/friendships_controller.rb	/^  def create$/;"	f	class:FriendshipsController
+current_page	app/helpers/application_helper.rb	/^  def current_page(path)$/;"	f	class:ApplicationHelper
+default_url	app/uploaders/profile_picture_uploader.rb	/^  def default_url(*args)$/;"	f	class:ProfilePictureUploader
+destroy	app/controllers/friendships_controller.rb	/^  def destroy$/;"	f	class:FriendshipsController
+edit	app/controllers/profiles_controller.rb	/^  def edit$/;"	f	class:ProfilesController
+friends	app/models/profile.rb	/^  def friends$/;"	f	class:Profile
+friendship_for	app/models/profile.rb	/^  def friendship_for(profile)$/;"	f	class:Profile
+friendships	app/models/profile.rb	/^  def friendships$/;"	f	class:Profile
+index	app/controllers/profiles_controller.rb	/^  def index$/;"	f	class:ProfilesController
+pre	app/controllers/profiles_controller.rb	/^  def pre$/;"	f	class:ProfilesController
+profile_params	app/controllers/profiles_controller.rb	/^  def profile_params$/;"	f	class:ProfilesController
+show	app/controllers/profiles_controller.rb	/^  def show$/;"	f	class:ProfilesController
+store_dir	app/uploaders/profile_picture_uploader.rb	/^  def store_dir$/;"	f	class:ProfilePictureUploader
+update	app/controllers/friendships_controller.rb	/^  def update$/;"	f	class:FriendshipsController
+update	app/controllers/profiles_controller.rb	/^  def update$/;"	f	class:ProfilesController
+welcome	app/controllers/application_controller.rb	/^  def welcome$/;"	f	class:ApplicationController

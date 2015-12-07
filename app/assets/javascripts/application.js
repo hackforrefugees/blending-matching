@@ -16,25 +16,25 @@
 //= require selectize
 //= require_tree .
 
-$(document).on('page:change', function() {
-  $('.select-box').selectize({});
-
-  $('.tag-box').selectize({
-    delimiter: ',',
-    persist: false,
-    create: function(input) {
-      return {
-        value: input,
-        text: input
-      };
-    }
-  });
-
-  $(".js-close").on("click", function() {
-    $(this).parent().parent().fadeOut(200);
-  })
-
-  setTimeout(function(){
-    $('.flash').fadeOut(200);
-  }, 2000);
-});
+// $(document).on('page:change', function() {
+//   $('.select-box').selectize({});
+//
+//   $('.tag-box').selectize({
+//     delimiter: ',',
+//     persist: false,
+//     create: function(input) {
+//       return {
+//         value: input,
+//         text: input
+//       };
+//     }
+//   });
+//
+//   $(".js-close").on("click", function() {
+//     $(this).parent().parent().fadeOut(200);
+//   })
+//
+//   setTimeout(function(){
+//     $('.flash').fadeOut(200);
+//   }, 2000);
+// });

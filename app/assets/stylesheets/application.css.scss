@@ -13,59 +13,59 @@
  *= require_self
  */
 
-@import "normalize-rails";
-@import "bourbon";
-@import "selectize";
-@import "color";
-
-@import "buttons";
-@import "flashes";
-@import "forms";
-@import "navbar";
-@import "profile";
-@import "profiles";
-@import "tags";
-@import "welcome";
-
-html {
-  box-sizing: border-box;
-  height: 100%;
-  font-size: 18px;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  position: relative;
-  color: $color-offblack;
-  line-height: 1.4;
-  height: 100%;
-}
-
-a {
-  color: $color-primary;
-  text-decoration: none;
-}
-
-h2 {
-  font-size: 1.25rem;
-  font-weight: 300;
-  margin: 0;
-  margin-bottom: 1rem;
-}
-
-img {
-  max-width: 100%;
-}
-
-.container {
-  padding: 1rem;
-}
-
-.u-center {
-  text-align: center;
-}
+// @import "normalize-rails";
+// @import "bourbon";
+// @import "selectize";
+// @import "color";
+//
+// @import "buttons";
+// @import "flashes";
+// @import "forms";
+// @import "navbar";
+// @import "profile";
+// @import "profiles";
+// @import "tags";
+// @import "welcome";
+//
+// html {
+//   box-sizing: border-box;
+//   height: 100%;
+//   font-size: 18px;
+//   font-family: "Lato", sans-serif;
+//   font-weight: 300;
+// }
+//
+// *, *:before, *:after {
+//   box-sizing: inherit;
+// }
+//
+// body {
+//   position: relative;
+//   color: $color-offblack;
+//   line-height: 1.4;
+//   height: 100%;
+// }
+//
+// a {
+//   color: $color-primary;
+//   text-decoration: none;
+// }
+//
+// h2 {
+//   font-size: 1.25rem;
+//   font-weight: 300;
+//   margin: 0;
+//   margin-bottom: 1rem;
+// }
+//
+// img {
+//   max-width: 100%;
+// }
+//
+// .container {
+//   padding: 1rem;
+// }
+//
+// .u-center {
+//   text-align: center;
+// }
