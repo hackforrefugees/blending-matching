@@ -1,7 +1,14 @@
-<nav class="navbar">
-  <div class="navbar__brand"><%= link_to "Blending", root_path %></div>
-</nav>
+<div class="ui center aligned basic segment">
+  <p>What best describes your family?</p>
 
+  <%= link_to "We're new to this country", new_profile_registration_path(native: false), class: "big ui teal button" %>
+  <div class="ui horizontal divider">
+    Or
+  </div>
+  <%= link_to "We've lived here for a long time", new_profile_registration_path(native: true), class: "big ui teal button" %>
+</div>
+
+<!--
 <div class="container u-center">
   <div class="pre">
     <div class="pre__alt">

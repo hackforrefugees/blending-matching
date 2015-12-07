@@ -1,9 +1,47 @@
-<nav class="navbar">
-  <div class="navbar__brand"><%= link_to "Blending", root_path %></div>
-</nav>
+<div class="ui horizontal divider">
+  Sign up
+</div>
 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "ui large form" }) do |f| %>
+  <div class="field">
+    <%= f.label :name, "What would you like to call your family?" %>
+    <div class="ui input">
+      <%= f.text_field :name, placeholder: "E.g. The Outdoors Family" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :location_id, "Where do you live at the moment?" %>
+    <%= f.collection_select :location_id, Location.all, :id, :name, {}, class: "ui dropdown" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "Enter your email" %>
+    <div class="ui input">
+      <%= f.email_field :email %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Enter a password" %>
+    <div class="ui input">
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Enter the password again" %>
+    <div class="ui input">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <%= f.submit "Sign up", class: "fluid ui large teal button" %>
+<% end %>
+
+
+<!--
 <div class="container">
-  <!-- <h2>Sign up</h2> -->
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f| %>
     <% if resource.errors.present? %>
