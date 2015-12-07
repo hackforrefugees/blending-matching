@@ -1,5 +1,7 @@
-<div class="profiles">
+<!--<div class="profiles">-->
+<div class="ui container">
 
+  <!--
   <% if current_profile.friends.present? %>
     <div class="profiles__header">
       Your befriended families
@@ -17,15 +19,116 @@
       <%= render friend %>
     <% end %>
   <% end %>
+  -->
 
+  <!--
   <div class="profiles__header">
     Families
   </div>
+  -->
+
+  <div class="ui floating dropdown labeled icon button basic">
+    <i class="filter icon"></i>
+    <span class="text">Filter by interest</span>
+    <div class="menu">
+      <div class="ui icon search input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search interests...">
+      </div>
+      <div class="scrolling menu">
+        <div class="item">
+          <i class="soccer icon"></i> Sports
+        </div>
+        <div class="item">
+          <i class="food icon"></i> Food
+        </div>
+        <div class="item">
+          <i class="child icon"></i> Children
+        </div>
+        <div class="item">
+          <i class="coffee icon"></i> Fika
+        </div>
+        <div class="item">
+          <i class="paw icon"></i> Animals
+        </div>
+        <div class="item">
+          <i class="music icon"></i> Music
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui horizontal divider">
+    Families
+  </div>
+
+  <div class="ui stackable three column grid">
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="image">
+          <%= image_tag "http://www.hashkitten.com/500/250/elliot" %>
+        </div>
+        <div class="content">
+          <a class="header">The Adams family</a>
+          <div class="meta">
+            From Syria
+          </div>
+          <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui labels">
+            <a class="ui image label">
+              <i class="soccer icon"></i> Sports
+            </a>
+            <a class="ui image label">
+              <i class="food icon"></i> Food
+            </a>
+            <a class="ui image label">
+              <i class="child icon"></i> Children
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="image">
+          <%= image_tag "http://www.hashkitten.com/500/250/mary" %>
+        </div>
+        <div class="content">
+          <a class="header">The Smiths family</a>
+          <div class="meta">
+            From India
+          </div>
+          <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui labels">
+            <a class="ui image label">
+              <i class="coffee icon"></i> Fika
+            </a>
+            <a class="ui image label">
+              <i class="paw icon"></i> Animals
+            </a>
+            <a class="ui image label">
+              <i class="music icon"></i> Music
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <% @profiles.each do |profile| %>
-    <%= render profile %>
+    <%#= render profile %>
   <% end %>
 
+
+  <!--
   <div class="profiles__search">
     <div class="container">
       <%= form_tag(profiles_path, method: "get") do %>
@@ -38,4 +141,5 @@
       <% end %>
     </div>
   </div>
+  -->
 </div>

@@ -10,52 +10,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="ui text container">
-      <% if notice.present? %>
-        <div class="ui info message">
-          <i class="close icon"></i>
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert.present? %>
-        <div class="ui warning message">
-          <i class="close icon"></i>
-          <%= alert %>
-        </div>
-      <% end %>
+    <!--
+    <% if notice.present? %>
+      <div class="ui info message">
+        <i class="close icon"></i>
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="ui warning message">
+        <i class="close icon"></i>
+        <%= alert %>
+      </div>
+    <% end %>
+    -->
 
-      <% if signed_in? %>
-        <!--
-        <nav class="navbar">
-          <%= link_to "profiles", profiles_path, class: "#{current_page(profiles_path)} navbar__item" %>
-          <%= link_to "family", profile_path(current_profile), class: "#{current_page(profile_path(current_profile))} #{current_page(edit_profile_path)} navbar__item" %>
-          <%= link_to "chat", "#", class: "navbar__item" %>
-          <%= link_to "settings", edit_profile_registration_path(current_profile), class: "#{current_page(edit_profile_registration_path(current_profile))} navbar__item" %>
-        </nav>
-        -->
-        <div class="ui teal inverted top fixed labeled small icon four item menu">
-          <%= link_to profiles_path, class: "item" do %>
-            <i class="heart icon"></i>
-            Families
-          <% end %>
-          <%= link_to profile_path(current_profile), class: "item" do %>
-            <i class="group icon"></i>
-            Profile
-          <% end %>
-          <a class="item">
-            <i class="chat icon"></i>
-            Inbox
-          </a>
-          <%= link_to edit_profile_registration_path, class: "item" do %>
-            <i class="settings icon"></i>
-            Settings
-          <% end %>
-        </div>
-        <br><br><br><br>
+    <% if signed_in? %>
+      <div class="ui teal inverted top fixed labeled small icon four item menu">
+        <%= link_to profiles_path, class: "item" do %>
+          <i class="heart icon"></i>
+          Families
+        <% end %>
+        <%= link_to profile_path(current_profile), class: "item" do %>
+          <i class="group icon"></i>
+          Profile
+        <% end %>
+        <a class="item">
+          <i class="chat icon"></i>
+          Inbox
+        </a>
+        <%= link_to edit_profile_registration_path, class: "item" do %>
+          <i class="settings icon"></i>
+          Settings
+        <% end %>
+      </div>
+      <br><br><br><br><!-- TODO: fix -->
 
-        <%= yield %>
-      <% else %>
-        <br>
+      <%= yield %>
+    <% else %>
+      <div class="ui text container">
+        <br><!-- TODO: fix -->
         <h2 class="ui icon center aligned header">
           <i class="group icon"></i>
           <div class="content">
@@ -65,10 +59,10 @@
             </div>
           </div>
         </h2>
-        <br>
+        <br><!-- TODO: fix -->
 
         <%= yield %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </body>
 </html>

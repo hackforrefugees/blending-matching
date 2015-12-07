@@ -16,7 +16,8 @@
 //= require selectize
 //= require_tree .
 
-// $(document).on('page:change', function() {
+$(document).on('page:change', function() {
+  $('.dropdown').dropdown();
 //   $('.select-box').selectize({});
 //
 //   $('.tag-box').selectize({
@@ -37,4 +38,4 @@
 //   setTimeout(function(){
 //     $('.flash').fadeOut(200);
 //   }, 2000);
-// });
+});
