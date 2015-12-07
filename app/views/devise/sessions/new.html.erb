@@ -1,41 +1,28 @@
-<div class="ui text container">
-
-  <h2 class="ui header">Sign in</h2>
-
-  <div class="ui large form">
-    <div class="field">
-      <label>Email</label>
-      <div class="ui input">
-        <input type="text">
-      </div>
-    </div>
-    <div class="field">
-      <label>Password</label>
-      <div class="ui input">
-        <input type="password">
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui checkbox">
-        <input type="checkbox" tabindex="0" class="hidden">
-        <label>Remember me</label>
-      </div>
-    </div>
-    <div class="ui large teal button">Login</div>
-  </div>
-
+<div class="ui horizontal divider">
+  Sign in
 </div>
 
-
-
-
-
-
-
-
-
-
-
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "ui large form" }) do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+    <div class="ui input">
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <div class="ui input">
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <%= f.check_box :remember_me, class: "hidden" %>
+      <%= f.label :remember_me %>
+    </div>
+  </div>
+  <%= f.submit "Sign in", class: "fluid ui large teal button" %>
+<% end %>
 
 <!--
 <nav class="navbar">
@@ -70,4 +57,3 @@
 
   <%= render "devise/shared/links" %>
 </div>
--->

@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blending</title>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-  <link href="//oss.maxcdn.com/semantic-ui/2.1.6/semantic.min.css" rel="stylesheet" type="text/css">
-  <script src="//oss.maxcdn.com/semantic-ui/2.1.6/semantic.min.js"></script>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,300,100" rel="stylesheet" type="text/css"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  <% if signed_in? %>
-    <nav class="navbar">
-      <%= link_to image_tag("blender.svg"), profiles_path, class: "#{current_page(profiles_path)} navbar__item" %>
-      <%= link_to image_tag("family.svg"), profile_path(current_profile), class: "#{current_page(profile_path(current_profile))} #{current_page(edit_profile_path)} navbar__item" %>
-      <%= link_to image_tag("chat.svg"), "#", class: "navbar__item" %>
-      <%= link_to image_tag("settings.svg"), edit_profile_registration_path(current_profile), class: "#{current_page(edit_profile_registration_path(current_profile))} navbar__item" %>
-    </nav>
-  <% end %>
+  <head>
+    <title>Blending</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <link href="//oss.maxcdn.com/semantic-ui/2.1.6/semantic.min.css" rel="stylesheet" type="text/css">
+    <script src="//oss.maxcdn.com/semantic-ui/2.1.6/semantic.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="ui text container">
+      <% if notice.present? %>
+        <div class="ui info message">
+          <i class="close icon"></i>
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="ui warning message">
+          <i class="close icon"></i>
+          <%= alert %>
+        </div>
+      <% end %>
 
-  <% if notice.present? %>
-    <div class="flash flash--notice">
-      <span class="flash__close"><%= image_tag "x.svg", class: "js-close" %></span>
-      <%= notice %>
-    </div>
-  <% end %>
-  <% if alert.present? %>
-    <div class="flash flash--alert">
-      <span class="flash__close"><%= image_tag "x.svg", class: "js-close" %></span>
-      <%= alert %>
-    </div>
-  <% end %>
+      <% if signed_in? %>
+        <!--
+        <nav class="navbar">
+          <%= link_to "profiles", profiles_path, class: "#{current_page(profiles_path)} navbar__item" %>
+          <%= link_to "family", profile_path(current_profile), class: "#{current_page(profile_path(current_profile))} #{current_page(edit_profile_path)} navbar__item" %>
+          <%= link_to "chat", "#", class: "navbar__item" %>
+          <%= link_to "settings", edit_profile_registration_path(current_profile), class: "#{current_page(edit_profile_registration_path(current_profile))} navbar__item" %>
+        </nav>
+        -->
+        <div class="ui teal inverted top fixed labeled small icon four item menu">
+          <%= link_to profiles_path, class: "item" do %>
+            <i class="heart icon"></i>
+            Families
+          <% end %>
+          <%= link_to profile_path(current_profile), class: "item" do %>
+            <i class="group icon"></i>
+            Profile
+          <% end %>
+          <a class="item">
+            <i class="chat icon"></i>
+            Inbox
+          </a>
+          <%= link_to edit_profile_registration_path, class: "item" do %>
+            <i class="settings icon"></i>
+            Settings
+          <% end %>
+        </div>
+        <br><br><br><br>
 
-  <%= yield %>
-</body>
+        <%= yield %>
+      <% else %>
+        <br>
+        <h2 class="ui icon center aligned header">
+          <i class="group icon"></i>
+          <div class="content">
+            Blending
+            <div class="sub header">
+              Allows families to connect and share experiences.
+            </div>
+          </div>
+        </h2>
+        <br>
+
+        <%= yield %>
+      <% end %>
+    </div>
+  </body>
 </html>
