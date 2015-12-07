@@ -4,6 +4,6 @@
 
 - People who can connect us with users, both swedish families and new families. Refugee phones? Volunteer organizations? Black dot?
 
-## What we have
+## What have been offered so far
 
 - Offered Hosting by Yashar (yashar@lingio.co)
